@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Power
  * @param {number} m base
