@@ -12,14 +12,14 @@ function cleanString (str) {
 }
 
 function getMinMax(str) {
-    let minNumber = str[0];
-    let maxNumber = str[0];
+    let minNumber = parseFloat(str[0]);
+    let maxNumber = parseFloat(str[0]);
     for (let key in str) {
         if (parseFloat(str[key]) > maxNumber) {
-            maxNumber = str[key];
+            maxNumber = parseFloat(str[key]);
         }
         if (parseFloat(str[key]) < minNumber) {
-            minNumber = str[key];
+            minNumber = parseFloat(str[key]);
         }
     }
     let minmaxArr = [minNumber, maxNumber];
