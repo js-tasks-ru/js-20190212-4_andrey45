@@ -39,5 +39,5 @@ function getMinMax(str) {
     return minmaxObj;
 }
 
-console.log(getMinMax(inputData));
+// console.log(getMinMax(inputData));
 
