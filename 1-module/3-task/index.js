@@ -5,7 +5,11 @@
  * @param   {string} str -  входные данные
  * @returns {{min:number, max:number}}  объект
  */
-function getMinMax(str) {
 
+
+
+function getMinMax(str) {
+    let string1 = str.split(" ");
+    return string1;
 }
 
