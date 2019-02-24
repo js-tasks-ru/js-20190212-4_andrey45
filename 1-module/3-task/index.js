@@ -6,25 +6,38 @@
  * @returns {{min:number, max:number}}  объект
  */
 
+/*
+clearString
+Чистим строку, переводим в массив для поиска элементов
+ */
 function cleanString (str) {
-    var string = str.split(" ");
+    let string = str.split(" ");
     let newString = string.join();
     let clrString = newString.split(",");
     return clrString;
 }
 
+/*
+getMinMax
+Основная функция для поиска минимального и максимального элемента
+*/
 function getMinMax(str) {
-    let minNumber = parseFloat(str[0]);
-    let maxNumber = parseFloat(str[0]);
-    for (let key in str) {
-        if (parseFloat(str[key]) > maxNumber) {
-            maxNumber = parseFloat(str[key]);
+    let newStr = cleanString(str);
+    let minNumber = parseFloat(newStr[0]);
+    let maxNumber = parseFloat(newStr[0]);
+    for (let key in newStr) {
+        if (parseFloat(newStr[key]) > maxNumber) {
+            maxNumber = parseFloat(newStr[key]);
         }
-        if (parseFloat(str[key]) < minNumber) {
-            minNumber = parseFloat(str[key]);
+        if (parseFloat(newStr[key]) < minNumber) {
+            minNumber = parseFloat(newStr[key]);
         }
     }
-    let minmaxArr = [minNumber, maxNumber];
-    return minmaxArr;
+    let minmaxObj = {};
+    minmaxObj.min = minNumber;
+    minmaxObj.max = maxNumber;
+    return minmaxObj;
 }
+
+console.log(getMinMax(inputData));
 
