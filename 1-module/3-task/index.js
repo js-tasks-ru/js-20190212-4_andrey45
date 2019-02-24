@@ -7,8 +7,10 @@
  */
 
 function cleanString (str) {
-    var newString = str.split(" ");
-    return newString;
+    var string = str.split(" ");
+    let newString = string.join();
+    let clrString = newString.split(",");
+    return clrString;
 }
 
 function getMinMax(str) {
