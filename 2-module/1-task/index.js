@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Клонируем объект
  * @param {Object} obj - клонируем объект
@@ -6,23 +8,23 @@
 /*
 Объявляем тестовую переменную
  */
-let obj = {
-    test: 1,
-    test22: 2
-};
 
 /*
 clone
 функция клонирования объекта через перебор свойств
  */
-function clone (obj) {
-    let target = {};
+function clone(obj) {
+    const targetObj = {};
     for (let prop in obj) {
-        if (obj.hasOwnProperty(prop)) {
-            target[prop] = obj[prop];
+        if (typeof obj[prop] !== "object") {
+            targetObj[prop] = obj[prop];
+        } else {
+            targetObj[prop] = clone(obj[prop]);
         }
     }
-    return target;
+    return targetObj;
 }
+
+
 
 
