@@ -4,7 +4,7 @@
  * @param {number} age - максимальный возраст
  * @returns {string}
  */
-"use strict"
+"use strict";
 let data = [
     {
         "balance": "$1,825.65",
