@@ -4,14 +4,6 @@ let calendar = {
 };
 
 calendar[Symbol.iterator] = function () {
-};
-
-let calendar = {
-    from: new Date('2018-01-01T15:09:10Z'),
-    to: new Date('2018-02-01T10:09:10Z')
-};
-
-calendar[Symbol.iterator] = function () {
     let current = this.from;
     let last = this.to;
     let thisDate = "";
@@ -25,7 +17,7 @@ calendar[Symbol.iterator] = function () {
                     thisDate = String(current.getDate());
                 }
                 if ((current.getDay() === 0) || (current.getDay() === 6)){
-                    thisDate = "[" + "0" + current.getDate() + "]";
+                    thisDate = "[" + thisDate + "]";
                 }
 
                 return {
@@ -40,10 +32,6 @@ calendar[Symbol.iterator] = function () {
         }
     }
 };
-
-for (let day of calendar) {
-    console.log(day);
-}
 
 
 
