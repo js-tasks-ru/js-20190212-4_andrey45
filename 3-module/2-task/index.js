@@ -24,6 +24,9 @@ calendar[Symbol.iterator] = function () {
                 } else if (current.getDate() >= 10) {
                     thisDate = String(current.getDate());
                 }
+                if ((current.getDay() === 0) || (current.getDay() === 6)){
+                    thisDate = "[" + "0" + current.getDate() + "]";
+                }
 
                 return {
                     done: false,
