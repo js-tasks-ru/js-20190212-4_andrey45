@@ -25,6 +25,6 @@ function makeFriendsList (friends) {
         ul.appendChild(li);
     }
 
-    document.body.appendChild(ul);
+    return ul;
 
 }
