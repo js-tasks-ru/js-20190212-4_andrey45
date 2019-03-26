@@ -5,8 +5,7 @@
  * @param {Element} table
  */
 function highlight(table) {
-    let doc = document;
-    let headsOfTable = doc.querySelector("thead tr").children;
+    let headsOfTable = table.querySelector("thead tr").children;
     let nameKey = 0;
     let ageKey = 0;
     let genderKey = 0;
@@ -22,7 +21,7 @@ function highlight(table) {
             statusKey = i;
         }
     }
-    let tableBody = doc.querySelector("tbody").children;
+    let tableBody = table.querySelector("tbody").children;
     console.log(tableBody);
     for (let j = 0; j<tableBody.length; j++) {
         if (tableBody[j].cells[ageKey].innerHTML < 18) {
@@ -41,6 +40,5 @@ function highlight(table) {
             tableBody[j].setAttribute("hidden", "");
         }
     }
-
-
+    return;
 }
