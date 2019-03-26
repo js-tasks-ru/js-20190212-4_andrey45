@@ -5,7 +5,8 @@
  * @param {Element} table
  */
 function highlight(table) {
-    let headsOfTable = document.querySelector("thead tr").children;
+    let doc = document;
+    let headsOfTable = doc.querySelector("thead tr").children;
     let nameKey = 0;
     let ageKey = 0;
     let genderKey = 0;
@@ -20,7 +21,16 @@ function highlight(table) {
         } else if (headsOfTable[i].innerHTML === "Status") {
             statusKey = i;
         }
-
     }
-    console.log(statusKey);
+    let tableBody = doc.querySelector("tbody").children;
+    console.log(tableBody);
+    for (let j = 0; j<tableBody.length; j++) {
+        if (tableBody[j].cells[1].innerHTML < 18) {
+            tableBody[j].style.textDecoration = "line-through";
+        }
+        console.log();
+    }
+
+
+
 }
