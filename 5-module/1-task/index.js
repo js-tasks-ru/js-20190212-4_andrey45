@@ -25,8 +25,13 @@ function highlight(table) {
     let tableBody = doc.querySelector("tbody").children;
     console.log(tableBody);
     for (let j = 0; j<tableBody.length; j++) {
-        if (tableBody[j].cells[1].innerHTML < 18) {
+        if (tableBody[j].cells[ageKey].innerHTML < 18) {
             tableBody[j].style.textDecoration = "line-through";
+        }
+        if (tableBody[j].cells[genderKey].innerHTML === "m") {
+            tableBody[j].setAttribute("class", "male")
+        } else if (tableBody[j].cells[genderKey].innerHTML === "f") {
+            tableBody[j].setAttribute("class", "female")
         }
         console.log();
     }
