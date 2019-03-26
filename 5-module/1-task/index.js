@@ -29,13 +29,18 @@ function highlight(table) {
             tableBody[j].style.textDecoration = "line-through";
         }
         if (tableBody[j].cells[genderKey].innerHTML === "m") {
-            tableBody[j].setAttribute("class", "male")
+            tableBody[j].classList.add("male");
         } else if (tableBody[j].cells[genderKey].innerHTML === "f") {
-            tableBody[j].setAttribute("class", "female")
+            tableBody[j].classList.add("female");
         }
-        console.log();
+        if (tableBody[j].cells[statusKey].getAttribute("data-available") === "true") {
+            tableBody[j].classList.add("available");
+        } else if (tableBody[j].cells[statusKey].getAttribute("data-available") === "false") {
+            tableBody[j].classList.add("unavailable");
+        } else if (tableBody[j].cells[statusKey].getAttribute("data-available") === null) {
+            tableBody[j].setAttribute("hidden", "");
+        }
     }
-
 
 
 }
