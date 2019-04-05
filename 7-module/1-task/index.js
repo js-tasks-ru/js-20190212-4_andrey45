@@ -7,9 +7,6 @@
  * @param {Array} log - массив для записи логов
  * @return {Function}
  */
-
-let log = [];
-
 function makeLogging(fn, log) {
     return function() {
         let subLog = [];
@@ -22,14 +19,3 @@ function makeLogging(fn, log) {
         return fn.apply(this, arguments);
     }
 }
-
-function work(a, b) {
-    return a + b;
-}
-
-work = makeLogging(work, log);
-console.log(work(1, 2)); // -> 3
-console.log(work(1, 3));
-console.log(work(1, 3));
-
-console.log(log);
